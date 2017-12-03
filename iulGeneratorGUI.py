@@ -144,7 +144,7 @@ def generate(root_dir, creator, controller, file_abs_path, reviewer, t_control, 
     inp['normcontroller'] = controller
     repl = {}
     i = 1
-    new_iul_file_docx = file_abs_path  # os.path.join(save_path, cfg['newIUL'])
+    new_iul_file_docx = file_abs_path
     iul_filename = os.path.basename(new_iul_file_docx)
 
     try:
@@ -204,7 +204,7 @@ def clear_form():
 
 
 def iul_name(filename):
-    iul_name = re.search(r'\d{1,3}(.\d{1,3})?-\d{4}-\w{1,3}', filename)  # iul_name = re.search(r'\d{2}-\d{4}-\w{1,3}', filename)
+    iul_name = re.search(r'\d{1,3}(.\d{1,3})?-\d{4}-\w{1,3}', filename)
     if iul_name is None:
         return filename
     else:
@@ -241,7 +241,6 @@ def set_status(val):
 
 def iul_button0():
     save_path = askdirectory(initialdir=tkDIR.get(), title="Сохранить в")
-    #save_path = filedialog.asksaveasfilename(initialdir=tkDIR.get(), initialfile='Новый-УЛ.docx', title="Select file", filetypes=(("docx", "*.docx"), ("Все файлы", "*.*")))
     if save_path != '' and not isinstance(save_path, tuple):
         disable_widget(tkGenBut)
         tkPrgs.grid(row=3, column=1, sticky='NE', padx=5, pady=17)
