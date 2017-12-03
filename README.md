@@ -6,5 +6,5 @@ RU: Генератор ведомости электронных докумен�
 
 ## Requirements:
 
-Python3
-python-docx
+- Python3
+- python-docx
